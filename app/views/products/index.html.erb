@@ -1,0 +1,25 @@
+<!-- shows everything in the cart -->
+<h2> Put shit in your cart! </h2>
+
+<%= form_tag('/') do %>
+  <%= text_field_tag :product %>
+  <%= submit_tag "add to cart" %>
+<% end %>
+
+<br />
+
+<div>
+
+  <ul>
+
+    <% if @cart %>
+      <% @cart.each do |thing| %>
+      <li>
+        <%= thing %>
+      </li>
+      <% end %>
+    <% end %>
+
+  </ul>
+
+</div>
